@@ -72,7 +72,7 @@ class MedicamentoController extends Controller
             'data_validade' => 'required',
             'data_fabricacao' => 'required',
             'transportadoras_id' => 'required',
-            'valor' => 'required',
+            'valor' => 'required|numeric|min:0.01',
             'quantidade' => 'required',
         ]);
 

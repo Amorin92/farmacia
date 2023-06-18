@@ -99,7 +99,7 @@ return [
     'min' => [
         'array' => 'The :attribute field must have at least :min items.',
         'file' => 'The :attribute field must be at least :min kilobytes.',
-        'numeric' => 'The :attribute field must be at least :min.',
+        'numeric' => 'O campo :attribute  deve ter pelo menos :min.',
         'string' => 'The :attribute field must be at least :min characters.',
     ],
     'min_digits' => 'The :attribute field must have at least :min digits.',
@@ -176,7 +176,7 @@ return [
             'required' => 'O campo Transportadora é obrigatório.',
         ],
         'valor' => [
-            'required' => 'O campo Valor é obrigatório.',
+            'required' => 'O campo Valor deve ser maior que zero.',
         ],
         'quantidade' => [
             'required' => 'O campo Quantidade é obrigatório.',
@@ -190,7 +190,6 @@ return [
         'tipos_id' => [
             'required' => 'O campo Tipo do envio é obrigatório.',
         ],
-
     ],
 
     /*
