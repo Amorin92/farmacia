@@ -181,6 +181,16 @@ return [
         'quantidade' => [
             'required' => 'O campo Quantidade é obrigatório.',
         ],
+        'endereco' => [
+            'required' => 'O campo Endereço é obrigatório.',
+        ],
+        'cnpj' => [
+            'required' => 'O campo CNPJ é obrigatório.',
+        ],
+        'tipos_id' => [
+            'required' => 'O campo Tipo do envio é obrigatório.',
+        ],
+
     ],
 
     /*

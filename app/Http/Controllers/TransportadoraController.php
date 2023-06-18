@@ -48,6 +48,13 @@ class TransportadoraController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nome' => 'required',
+            'cnpj' => 'required',
+            'endereco' => 'required',
+            'tipos_id' => 'required',
+        ]);
+
         if ($request->input('id') == 0) {
             $transportadora = new Transportadora();
           } else {

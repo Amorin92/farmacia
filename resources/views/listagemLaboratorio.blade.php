@@ -41,5 +41,6 @@
         </tbody>
     </table>
     {{ $laboratorios->onEachSide(1)->links('pagination::bootstrap-4')->withClass('pagination-sm') }}
+
 @endsection
 

@@ -65,17 +65,16 @@ class MedicamentoController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'nome' => 'required',
             'lote' => 'required',
+            'laboratorio_id' => 'required',
             'data_validade' => 'required',
             'data_fabricacao' => 'required',
+            'transportadoras_id' => 'required',
             'valor' => 'required',
             'quantidade' => 'required',
-
-            'laboratorio_id' => 'required|exists:laboratorios,id',
-            'transportadoras_id' => 'required|exists:transportadoras,id',
-            ]);
+        ]);
 
         if ($request->input('id') == 0) {
             $medicamento = new Medicamento();
