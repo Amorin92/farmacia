@@ -11,7 +11,7 @@
       </div>
   @endif
 
-  <h1>Listagem de Medicamentos</h1>
+  <h1>Consulte os medicamentos disponíveis</h1>
 
   <form action="{{ route('medicamento.busca') }}" method="GET" class="mb-3">
     <div class="input-group">
@@ -38,7 +38,6 @@
             </div>
           </a>
           <div class="card-footer footer-white">
-            <!-- Removendo os botões editar e excluir -->
           </div>
         </div>
       </div>
@@ -46,7 +45,6 @@
   </div>
 
   <div class="d-flex justify-content-between">
-    <div class="text-muted">{{$medicamentos->total()}} Medicamentos encontrados</div>
     {{ $medicamentos->onEachSide(1)->links('pagination::bootstrap-4')->withClass('pagination-sm') }}
   </div>
 @endsection

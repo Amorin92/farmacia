@@ -26,6 +26,7 @@ Route::get('/medicamento/detalhes', [MedicamentoController::class, 'detalhes'])-
 Route::get('/detalhes', [MedicamentoController::class, 'detalhes'])->name('medicamento.detalhes');
 Route::get('/detalhes/{id}', [MedicamentoController::class, 'detalhes'])->name('medicamento.detalhes');
 Route::get('home', [MedicamentoController::class, 'index']);
+Route::get('/index', [MedicamentoController::class, 'index']);
 
 
 /* Route::get('/', function () {
@@ -46,6 +47,7 @@ Route::get('/index', function () {
 
 
 Route::middleware('auth')->group(function () {
+Route::get('listagemMedicamento', [MedicamentoController::class, 'listar']);
 Route::get('listagemMedicamento', [MedicamentoController::class, 'listar']);
 Route::get('/medicamento/listar', [MedicamentoController::class, 'listar']);
 
@@ -79,6 +81,8 @@ Route::put('/profile', [ProfileController::class, 'update'])->middleware('auth')
 Route::delete('/profile', [ProfileController::class, 'destroy'])->middleware('auth')->name('profile.destroy');
 
 Route::get('/tipo/listar', [TipoController::class, 'listar']);
+Route::get('/listagemMedicamento', [MedicamentoController::class, 'listar'])->name('listagemMedicamento');
+Route::get('/index', [MedicamentoController::class, 'index'])->name('index');
 
 /*  Route::get('/', function () {
     return view('index');

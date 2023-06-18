@@ -17,7 +17,7 @@ class MedicamentoController extends Controller
     {
         $medicamentos = Medicamento::orderBy('nome')->paginate(10);
 
-    return view('index', compact('medicamentos'));
+    return view('\index', compact('medicamentos'));
     }
 
     function novo() {
@@ -140,15 +140,13 @@ class MedicamentoController extends Controller
         // Converte o termo para minúsculas
         $termo = strtolower($termo);
 
-        // Realiza a lógica de busca
         $medicamentos = Medicamento::where(function ($query) use ($termo) {
             $query->whereRaw('LOWER(nome) LIKE ?', ['%' . $termo . '%'])
                 ->orWhereHas('laboratorios', function ($query) use ($termo) {
                     $query->whereRaw('LOWER(nome) LIKE ?', ['%' . $termo . '%']);
                 });
-        })->orderBy('nome')->paginate(10); // Alteração aqui para usar paginate()
+        })->orderBy('nome')->paginate(10);
 
-        // Retorna a view com os resultados da busca
         return view('medicamentoBusca', compact('medicamentos'));
     }
 

@@ -31,6 +31,6 @@
             @endforeach
         </div>
     @endif
-
+    <div class="text-muted">{{$medicamentos->total()}} Medicamentos encontrados</div>
     {{ $medicamentos->onEachSide(1)->links('pagination::bootstrap-4')->withClass('pagination-sm') }}
 @endsection
